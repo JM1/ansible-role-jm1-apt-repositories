@@ -11,6 +11,7 @@ galaxy_info:
   # Ref.: https://galaxy.ansible.com/api/v1/platforms/
   - name: Debian
     versions:
+    - stretch
     - buster
     - bullseye
 

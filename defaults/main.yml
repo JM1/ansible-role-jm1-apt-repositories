@@ -6,6 +6,11 @@
 apt_repositories: |
   {{
     {
+      'Debian_9': [
+        apt_repositories_debian_9.stretch.deb,
+        apt_repositories_debian_9.stretch_security.deb,
+        apt_repositories_debian_9.stretch_updates.deb
+      ],
       'Debian_10': [
         apt_repositories_debian_10.buster.deb,
         apt_repositories_debian_10.buster_security.deb,
@@ -30,6 +35,97 @@ apt_repositories: |
       ]
     }[distribution_id|join('_')|regex_replace('[^A-Za-z0-9 _-]', '_')]
   }}
+
+apt_repositories_debian_9:
+  #
+  # stretch
+  stretch:
+    deb:
+      repo: deb http://deb.debian.org/debian stretch main contrib non-free
+      filename: debian-stretch
+    deb_src:
+      repo: deb-src http://deb.debian.org/debian stretch main contrib non-free
+      filename: debian-stretch
+  stretch_debug:
+    deb:
+      repo: deb http://deb.debian.org/debian-debug/ stretch-debug main contrib non-free
+      filename: debian-stretch
+    deb_src:
+      repo: deb http://deb.debian.org/debian-debug/ stretch-debug main contrib non-free
+      filename: debian-stretch
+  #
+  # stretch updates
+  stretch_updates:
+    deb:
+      repo: deb http://deb.debian.org/debian stretch-updates main contrib non-free
+      filename: debian-stretch-updates
+    deb_src:
+      repo: deb-src http://deb.debian.org/debian stretch-updates main contrib non-free
+      filename: debian-stretch-updates
+  stretch_updates_debug:
+    deb:
+      repo: deb http://deb.debian.org/debian-debug/ stretch-updates-debug main contrib non-free
+      filename: debian-stretch-updates
+    deb_src:
+      repo: deb http://deb.debian.org/debian-debug/ stretch-updates-debug main contrib non-free
+      filename: debian-stretch-updates
+  #
+  # stretch proposed updates:
+  stretch_proposed_updates:
+    deb:
+      repo: deb http://deb.debian.org/debian stretch-proposed-updates main contrib non-free
+      filename: debian-stretch-proposed-updates
+    deb_src:
+      repo: deb-src http://deb.debian.org/debian stretch-proposed-updates main contrib non-free
+      filename: debian-stretch-proposed-updates
+  stretch_proposed_updates_debug:
+    deb:
+      repo: deb http://deb.debian.org/debian-debug/ stretch-proposed-updates-debug main contrib non-free
+      filename: debian-stretch-proposed-updates
+    deb_src:
+      repo: deb http://deb.debian.org/debian-debug/ stretch-proposed-updates-debug main contrib non-free
+      filename: debian-stretch-proposed-updates
+  #
+  # stretch security
+  stretch_security:
+    deb:
+      repo: deb http://deb.debian.org/debian-security/ stretch/updates main contrib non-free
+      filename: debian-stretch-security
+    deb_src:
+      repo: deb-src http://deb.debian.org/debian-security/ stretch/updates main contrib non-free
+      filename: debian-stretch-security
+  #
+  # stretch backports
+  stretch_backports:
+    deb:
+      repo: deb http://deb.debian.org/debian stretch-backports main contrib non-free
+      filename: debian-stretch-backports
+    deb_src:
+      repo: deb-src http://deb.debian.org/debian stretch-backports main contrib non-free
+      filename: debian-stretch-backports
+  stretch_backports_debug:
+    deb:
+      repo: deb http://deb.debian.org/debian-debug/ stretch-backports-debug main contrib non-free
+      filename: debian-stretch-backports
+    deb_src:
+      repo: deb-src http://deb.debian.org/debian-debug/ stretch-backports-debug main contrib non-free
+      filename: debian-stretch-backports
+  #
+  # stretch backports sloppy
+  stretch_backports_sloppy:
+    deb:
+      repo: deb http://deb.debian.org/debian stretch-backports-sloppy main contrib non-free
+      filename: debian-stretch-backports-sloppy
+    deb_src:
+      repo: deb-src http://deb.debian.org/debian stretch-backports-sloppy main contrib non-free
+      filename: debian-stretch-backports-sloppy
+  stretch_backports_sloppy_debug:
+    deb:
+      repo: deb http://deb.debian.org/debian-debug/ stretch-backports-sloppy-debug main contrib non-free
+      filename: debian-stretch-backports-sloppy
+    deb_src:
+      repo: deb-src http://deb.debian.org/debian-debug/ stretch-backports-sloppy-debug main contrib non-free
+      filename: debian-stretch-backports-sloppy
 
 apt_repositories_debian_10:
   #
