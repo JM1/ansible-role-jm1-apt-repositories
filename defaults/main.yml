@@ -255,10 +255,10 @@ apt_repositories_debian_11:
   # bullseye security
   bullseye_security:
     deb:
-      repo: deb http://deb.debian.org/debian-security/ bullseye/updates main contrib non-free
+      repo: deb http://deb.debian.org/debian-security/ bullseye-security main contrib non-free
       filename: debian-bullseye-security
     deb_src:
-      repo: deb-src http://deb.debian.org/debian-security/ bullseye/updates main contrib non-free
+      repo: deb-src http://deb.debian.org/debian-security/ bullseye-security main contrib non-free
       filename: debian-bullseye-security
   #
   # bullseye backports
